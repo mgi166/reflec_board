@@ -46,6 +46,7 @@ group :development, :test do
   gem 'rails_best_practices'
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'rubocop', require: false
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'pry-stack_explorer'
