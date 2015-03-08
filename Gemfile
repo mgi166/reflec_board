@@ -34,6 +34,10 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'mysql'
 
+group :development do
+  gem 'quiet_assets'
+end
+
 group :development, :test do
   gem 'better_errors'
 
