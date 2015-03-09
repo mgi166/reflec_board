@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'app#home'
+  root to: 'app#index'
 
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
