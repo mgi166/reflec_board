@@ -14,7 +14,6 @@ class UserSessionsController < ApplicationController
 
   # GET /user_sessions/new
   def new
-    @user_session = UserSession.new
   end
 
   # GET /user_sessions/1/edit
@@ -24,11 +23,11 @@ class UserSessionsController < ApplicationController
   # POST /user_sessions
   # POST /user_sessions.json
   def create
-    @user_session = UserSession.new(user_session_params)
-
+    user = User.find_by(name: user_session_params[:name]).try(:authenticate, user_session_params[:password])
     respond_to do |format|
-      if @user_session.save
-        format.html { redirect_to @user_session, notice: 'User session was successfully created.' }
+      if user
+        session[:user_id] = user.id
+        format.html { redirect_to root_url, notice: 'User session was successfully created.' }
         format.json { render :show, status: :created, location: @user_session }
       else
         format.html { render :new }
@@ -69,6 +68,6 @@ class UserSessionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_session_params
-      params[:user_session]
+      params[:user_sessions]
     end
 end
