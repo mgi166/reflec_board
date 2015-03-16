@@ -31,6 +31,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 gem 'mysql2'
+gem 'bootstrap-sass'
 
 group :development do
   gem 'quiet_assets'
