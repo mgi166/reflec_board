@@ -1,23 +1,8 @@
 class UserSessionsController < ApplicationController
   before_action :set_user_session, only: [:show, :edit, :update, :destroy]
 
-  # GET /user_sessions
-  # GET /user_sessions.json
-  def index
-    @user_sessions = UserSession.all
-  end
-
-  # GET /user_sessions/1
-  # GET /user_sessions/1.json
-  def show
-  end
-
   # GET /user_sessions/new
   def new
-  end
-
-  # GET /user_sessions/1/edit
-  def edit
   end
 
   # POST /user_sessions
@@ -31,20 +16,6 @@ class UserSessionsController < ApplicationController
         format.json { render :show, status: :created, location: @user_session }
       else
         format.html { render :new }
-        format.json { render json: @user_session.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /user_sessions/1
-  # PATCH/PUT /user_sessions/1.json
-  def update
-    respond_to do |format|
-      if @user_session.update(user_session_params)
-        format.html { redirect_to @user_session, notice: 'User session was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user_session }
-      else
-        format.html { render :edit }
         format.json { render json: @user_session.errors, status: :unprocessable_entity }
       end
     end
