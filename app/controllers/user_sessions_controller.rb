@@ -6,18 +6,14 @@ class UserSessionsController < ApplicationController
   end
 
   # POST /user_sessions
-  # POST /user_sessions.json
   def create
     user = User.find_by(name: user_session_params[:name]).try(:authenticate, user_session_params[:password])
-    respond_to do |format|
-      if user
-        session[:user_id] = user.id
-        format.html { redirect_to root_url, notice: 'User session was successfully created.' }
-        format.json { render :show, status: :created, location: @user_session }
-      else
-        format.html { render :new }
-        format.json { render json: @user_session.errors, status: :unprocessable_entity }
-      end
+
+    if user
+      session[:user_id] = user.id
+      redirect_to root_url, notice: 'User session was successfully created.'
+    else
+      render :new
     end
   end
 
