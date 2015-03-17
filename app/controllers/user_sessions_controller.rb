@@ -1,4 +1,5 @@
 class UserSessionsController < ApplicationController
+  include UserSessionsHelper
   before_action :set_user_session, only: [:show, :edit, :update, :destroy]
 
   # GET /user_sessions/new
