@@ -35,6 +35,6 @@ class UserSessionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_session_params
-      params[:user_sessions]
+      params.require(:user_sessions).permit(:name, :password)
     end
 end
