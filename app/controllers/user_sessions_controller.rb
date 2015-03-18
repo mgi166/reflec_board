@@ -1,7 +1,7 @@
 class UserSessionsController < ApplicationController
   include UserSessionsHelper
 
-  # GET /user_sessions/new
+  # GET /login
   def new
   end
 
@@ -16,7 +16,7 @@ class UserSessionsController < ApplicationController
     end
   end
 
-  # DELETE /user_sessions/1
+  # DELETE /logout
   def destroy
     logout
     redirect_to root_url, notice: 'User session was successfully destroyed.'
