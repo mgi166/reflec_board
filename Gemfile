@@ -33,6 +33,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'mysql2'
 gem 'bootstrap-sass'
 gem 'simple_form'
+gem 'bootstrap-generators'
 
 group :development do
   gem 'quiet_assets'
