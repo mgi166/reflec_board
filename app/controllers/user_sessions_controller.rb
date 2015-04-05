@@ -7,7 +7,12 @@ class UserSessionsController < ApplicationController
 
   # POST /user_sessions
   def create
-    user = User.find_by(name: user_session_params[:name]).try(:authenticate, user_session_params[:password])
+    user = User.where(
+             'name = ? OR email = ?',
+             user_session_params[:name_or_email],
+             user_session_params[:name_or_email]
+           ).first
+
     if user
       session[:user_id] = user.id
       redirect_to root_url, notice: 'User session was successfully created.'
@@ -25,6 +30,6 @@ class UserSessionsController < ApplicationController
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_session_params
-      params.require(:user_sessions).permit(:name, :password)
+      params.require(:user_sessions).permit(:name_or_email, :password)
     end
 end
