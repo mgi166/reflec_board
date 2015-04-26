@@ -140,18 +140,28 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "DELETE #destroy" do
-    it "destroys the requested user" do
-      user = User.create! valid_attributes
-      expect {
-        delete :destroy, {:id => user.to_param}, valid_session
-      }.to change(User, :count).by(-1)
+    let(:user) { User.create! valid_attributes }
+
+    context 'user is not logged in' do
+      subject { delete :destroy, {:id => user.to_param}, valid_session }
+      include_examples 'redirects to login url'
     end
 
-    it "redirects to the users list" do
-      user = User.create! valid_attributes
-      delete :destroy, {:id => user.to_param}, valid_session
-      expect(response).to redirect_to(users_url)
+    context 'user is already logged in' do
+      before do
+        login user
+      end
+
+      it "destroys the requested user" do
+        expect {
+          delete :destroy, {:id => user.to_param}, valid_session
+        }.to change(User, :count).by(-1)
+      end
+
+      it "redirects to the users list" do
+        delete :destroy, {:id => user.to_param}, valid_session
+        expect(response).to redirect_to(users_url)
+      end
     end
   end
-
 end
