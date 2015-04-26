@@ -1,35 +1,23 @@
 class UserSessionsController < ApplicationController
-  include UserSessionsHelper
-
   # GET /login
   def new
+    @user_session = UserSession.new
   end
 
   # POST /user_sessions
   def create
-    user = User.where(
-             'name = ? OR email = ?',
-             user_session_params[:name_or_email],
-             user_session_params[:name_or_email]
-           ).first
+    @user_session = UserSession.new(params[:user_session])
 
-    if user
-      session[:user_id] = user.id
-      redirect_to root_url, notice: 'User session was successfully created.'
+    if @user_session.save
+      redirect_to root_url, notice: "Login successful"
     else
-      redirect_to login_url, notice: 'Login failed.'
+      render :new, alert: 'Login failed.'
     end
   end
 
   # DELETE /logout
   def destroy
-    logout
-    redirect_to root_url, notice: 'User session was successfully destroyed.'
+    current_user_session.destroy
+    redirect_to root_url, notice: 'Logout successful.'
   end
-
-  private
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_session_params
-      params.require(:user_sessions).permit(:name_or_email, :password)
-    end
 end
