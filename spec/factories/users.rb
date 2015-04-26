@@ -1,11 +1,11 @@
 FactoryGirl.define do
   factory :user do
-    name 'test'
+    username 'test'
     email 'test@example.com'
-    password 'test'
+    password 'password'
 
     trait :blank_name_and_email do
-      name ''
+      username ''
       email ''
     end
   end
