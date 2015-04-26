@@ -12,10 +12,22 @@ RSpec.describe UsersController, type: :controller do
   let(:valid_session) { {} }
 
   describe "GET #show" do
-    it "assigns the requested user as @user" do
-      user = User.create! valid_attributes
-      get :show, {:id => user.to_param}, valid_session
-      expect(assigns(:user)).to eq(user)
+    let(:user) { User.create! valid_attributes }
+
+    context 'user is not logged in' do
+      subject { get :show, {:id => user.to_param}, valid_session }
+      include_examples 'redirects to login url'
+    end
+
+    context 'user is already logged in' do
+      before do
+        login user
+      end
+
+      it "assigns the requested user as @user" do
+        get :show, {:id => user.to_param}, valid_session
+        expect(assigns(:user)).to eq(user)
+      end
     end
   end
 
