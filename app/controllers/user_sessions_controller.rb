@@ -9,7 +9,7 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
 
     if @user_session.save
-      redirect_to root_url, notice: "Login successful"
+      redirect_back_or(@user_session, notice: "Login successful")
     else
       render :new, alert: 'Login failed.'
     end

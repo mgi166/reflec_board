@@ -20,4 +20,10 @@ class ApplicationController < ActionController::Base
   def store_location
     session[:return_to] = request.url
   end
+
+  def redirect_back_or(default, options)
+    url = session[:return_to] || default
+    redirect_to(url, options)
+    session[:return_to]
+  end
 end
