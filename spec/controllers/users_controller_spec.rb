@@ -92,42 +92,49 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "PUT #update" do
-    context "with valid params" do
-      let(:new_attributes) {
-        attributes_for(:user).merge(username: 'new_name')
-      }
-
-      it "updates the requested user" do
-        user = User.create! valid_attributes
-        put :update, {:id => user.to_param, :user => new_attributes}, valid_session
-        user.reload
-        expect(user.username).to eq('new_name')
-      end
-
-      it "assigns the requested user as @user" do
-        user = User.create! valid_attributes
-        put :update, {:id => user.to_param, :user => valid_attributes}, valid_session
-        expect(assigns(:user)).to eq(user)
-      end
-
-      it "redirects to the user" do
-        user = User.create! valid_attributes
-        put :update, {:id => user.to_param, :user => valid_attributes}, valid_session
-        expect(response).to redirect_to(user)
-      end
+    let(:user) { User.create! valid_attributes }
+    let(:new_attributes) do
+      attributes_for(:user).merge(username: 'new_name')
     end
 
-    context "with invalid params" do
-      it "assigns the user as @user" do
-        user = User.create! valid_attributes
-        put :update, {:id => user.to_param, :user => invalid_attributes}, valid_session
-        expect(assigns(:user)).to eq(user)
+    context 'user is not logged in' do
+      subject { put :update, {:id => user.to_param, :user => new_attributes}, valid_session }
+      include_examples 'redirects to login url'
+    end
+
+    context 'user is already logged in' do
+      before do
+        login user
       end
 
-      it "re-renders the 'edit' template" do
-        user = User.create! valid_attributes
-        put :update, {:id => user.to_param, :user => invalid_attributes}, valid_session
-        expect(response).to render_template("edit")
+      context "with valid params" do
+        it "updates the requested user" do
+          put :update, {:id => user.to_param, :user => new_attributes}, valid_session
+          user.reload
+          expect(user.username).to eq('new_name')
+        end
+
+        it "assigns the requested user as @user" do
+          put :update, {:id => user.to_param, :user => valid_attributes}, valid_session
+          expect(assigns(:user)).to eq(user)
+        end
+
+        it "redirects to the user" do
+          put :update, {:id => user.to_param, :user => valid_attributes}, valid_session
+          expect(response).to redirect_to(user)
+        end
+      end
+
+      context "with invalid params" do
+        it "assigns the user as @user" do
+          put :update, {:id => user.to_param, :user => invalid_attributes}, valid_session
+          expect(assigns(:user)).to eq(user)
+        end
+
+        it "re-renders the 'edit' template" do
+          put :update, {:id => user.to_param, :user => invalid_attributes}, valid_session
+          expect(response).to render_template("edit")
+        end
       end
     end
   end
