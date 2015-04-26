@@ -4,7 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    return @current_user_session if defined?(@current_user_session)
+    @current_user_session = UserSession.find
   end
 
   def logout
