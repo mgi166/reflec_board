@@ -32,6 +32,7 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'bootstrap-generators'
 gem 'authlogic'
+gem 'slim-rails'
 
 group :development do
   gem 'quiet_assets'
