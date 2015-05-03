@@ -8,7 +8,7 @@ class UserSessionsController < ApplicationController
 
   # POST /user_sessions
   def create
-    @user_session = UserSession.new(params[:user_session])
+    @user_session = UserSession.new(params[:user_sessions])
 
     if @user_session.save
       redirect_back_or(@user_session, notice: "Login successful")
