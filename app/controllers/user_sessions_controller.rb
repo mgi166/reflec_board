@@ -8,7 +8,7 @@ class UserSessionsController < ApplicationController
 
   # POST /user_sessions
   def create
-    @user_session = UserSession.new(params[:user_sessions])
+    @user_session = UserSession.new(user_sessions_params)
 
     if @user_session.save
       redirect_back_or(root_url, notice: "Login successful")
@@ -21,5 +21,11 @@ class UserSessionsController < ApplicationController
   def destroy
     current_user_session.destroy
     redirect_to root_url, notice: 'Logout successful.'
+  end
+
+  private
+
+  def user_sessions_params
+    params.require(:user_sessions).permit(:username, :password)
   end
 end
