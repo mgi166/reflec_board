@@ -16,7 +16,7 @@
     * archivement_rate
     * miss count
     * play count
-- [ ] firend model
+- [x] firend model
   * user has many friend
   * friend has many
   * have the following columns...
