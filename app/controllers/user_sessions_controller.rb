@@ -13,7 +13,8 @@ class UserSessionsController < ApplicationController
     if @user_session.save
       redirect_back_or(@user_session, notice: "Login successful")
     else
-      render :new, alert: 'Login failed.'
+      flash.now[:error] = 'Login failed.'
+      render :new
     end
   end
 
