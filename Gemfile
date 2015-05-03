@@ -33,6 +33,7 @@ gem 'simple_form'
 gem 'bootstrap-generators'
 gem 'authlogic'
 gem 'slim-rails'
+gem 'rails-i18n'
 
 group :development do
   gem 'quiet_assets'
