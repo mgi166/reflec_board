@@ -11,7 +11,7 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_sessions])
 
     if @user_session.save
-      redirect_back_or(@user_session, notice: "Login successful")
+      redirect_back_or(root_url, notice: "Login successful")
     else
       flash.now[:error] = 'Login failed.'
       render :new
