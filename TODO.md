@@ -4,8 +4,8 @@
 - [ ] music model
   * user has many musics
   * music has many users
-  * have the following columns...
-    * level(polymorphic)
+  - [x] have the following columns...
+    * level(single table inheritance)
     * name
     * clear
     * fullcombo
