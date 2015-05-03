@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150426082954) do
+ActiveRecord::Schema.define(version: 20150503123253) do
+
+  create_table "musics", force: :cascade do |t|
+    t.string   "name",            limit: 255,             null: false
+    t.string   "type",            limit: 255,             null: false
+    t.integer  "score",           limit: 4
+    t.float    "achivement_rate", limit: 24
+    t.integer  "clear_level",     limit: 4,   default: 0, null: false
+    t.integer  "play_count",      limit: 4,   default: 0, null: false
+    t.integer  "miss_count",      limit: 4,   default: 0, null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username",           limit: 255
