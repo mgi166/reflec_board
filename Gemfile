@@ -34,6 +34,7 @@ gem 'bootstrap-generators'
 gem 'authlogic'
 gem 'slim-rails'
 gem 'rails-i18n'
+gem 'rails_config'
 
 group :development do
   gem 'quiet_assets'
