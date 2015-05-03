@@ -13,8 +13,7 @@ class UserSessionsController < ApplicationController
     if @user_session.save
       redirect_back_or(root_url, notice: "Login successful")
     else
-      flash.now[:error] = 'Login failed.'
-      render :new
+      redirect_to login_url, alert: 'Login failed.'
     end
   end
 
