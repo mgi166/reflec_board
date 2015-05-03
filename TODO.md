@@ -26,3 +26,4 @@
   * http://p.eagate.573.jp/game/reflec/groovin/p/profile/index.html
 - [ ] save cookie to user
   * if user has expired cookie, again get cookie and save automatically
+- [ ] username or email login
