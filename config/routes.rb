@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, except: [:index]
   resources :user_sessions, only: [:create]
+  resources :musics, only: [:index, :show]
 
   get '/register' => 'users#new'
   get '/login'    => 'user_sessions#new'
