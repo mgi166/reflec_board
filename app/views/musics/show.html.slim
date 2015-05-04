@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Index:
+  = @music.index
+p
+  strong Show:
+  = @music.show
+
+= link_to 'Edit', edit_music_path(@music)
+'|
+= link_to 'Back', musics_path
