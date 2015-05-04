@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150503142624) do
+ActiveRecord::Schema.define(version: 20150504054410) do
 
   create_table "friend_users", force: :cascade do |t|
     t.integer  "friend_id",  limit: 4, null: false
@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(version: 20150503142624) do
     t.string "name",  limit: 255, null: false
     t.string "rb_id", limit: 255, null: false
   end
+
+  create_table "music_users", force: :cascade do |t|
+    t.integer  "music_id",   limit: 4, null: false
+    t.integer  "user_id",    limit: 4, null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "music_users", ["music_id"], name: "index_music_users_on_music_id", using: :btree
+  add_index "music_users", ["user_id"], name: "index_music_users_on_user_id", using: :btree
 
   create_table "musics", force: :cascade do |t|
     t.string   "name",            limit: 255,             null: false
