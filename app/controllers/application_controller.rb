@@ -30,6 +30,6 @@ class ApplicationController < ActionController::Base
   def redirect_back_or(default, options)
     url = session[:return_to] || default
     redirect_to(url, options)
-    session[:return_to]
+    session.delete(:return_to)
   end
 end
