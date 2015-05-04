@@ -5,9 +5,15 @@ class ApplicationController < ActionController::Base
 
   before_action :require_login
 
+  helper_method :current_user, :logged_in?
+
   def current_user
     return @current_user_session if defined?(@current_user_session)
     @current_user_session = UserSession.find
+  end
+
+  def logged_in?
+    defined? @current_user_session
   end
 
   def require_login
