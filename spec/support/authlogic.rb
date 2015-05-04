@@ -8,6 +8,11 @@ module AuthlogicHelper
 end
 
 RSpec.configure do |config|
-  config.include Authlogic::TestCase, type: :controller
-  config.include AuthlogicHelper, type: :controller
+
+  # FIXME: I hope that config specifies multiple types at once
+  #
+  [:controller, :feature].each do |type|
+    config.include Authlogic::TestCase, type: type
+    config.include AuthlogicHelper,     type: type
+  end
 end
