@@ -1,18 +1,24 @@
 require 'authlogic/test_case'
 
-module AuthlogicHelper
+module AuthlogicControllerHelper
   def login(user)
     activate_authlogic
     UserSession.create(user)
   end
 end
 
-RSpec.configure do |config|
+module AuthlogicFeatureHelper
+  def login(user)
+    visit login_path
 
-  # FIXME: I hope that config specifies multiple types at once
-  #
-  [:controller, :feature].each do |type|
-    config.include Authlogic::TestCase, type: type
-    config.include AuthlogicHelper,     type: type
+    fill_in :username, with: user.username
+    fill_in :password, with: user.password
+    click_button 'login'
   end
+end
+
+RSpec.configure do |config|
+  config.include Authlogic::TestCase
+  config.include AuthlogicControllerHelper, type: :controller
+  config.include AuthlogicFeatureHelper,    type: :feature
 end
