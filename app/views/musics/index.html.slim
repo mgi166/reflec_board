@@ -10,5 +10,5 @@ table
     - @musics.each do |music|
       tr
         td = music.name
-        td = link_to 'Show', music
+        td = link_to 'Show', controller: :musics, action: :show, id: music.to_param
 
