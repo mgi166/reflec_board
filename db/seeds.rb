@@ -7,9 +7,10 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 ActiveRecord::Base.transaction do
-  FactoryGirl.create :user
+  user = FactoryGirl.create :user
 
   20.times do
-    FactoryGirl.create :music
+    hard_music = FactoryGirl.create :hard_music
+    FactoryGirl.create(:music_user, music: hard_music, user: user)
   end
 end
