@@ -27,6 +27,16 @@ RSpec.feature "Logins", type: :feature do
         expect(page).to have_content('logout')
       end
 
+      it do
+        visit login_path
+
+        fill_in :username, with: 'test'
+        fill_in :password, with: 'password'
+        click_button 'login'
+
+        expect(page).not_to have_content('Sign up')
+      end
+
       it 'redirects to root_path' do
         visit login_path
 
@@ -57,6 +67,16 @@ RSpec.feature "Logins", type: :feature do
         click_button 'login'
 
         expect(page).to have_content('login')
+      end
+
+      it do
+        visit login_path
+
+        fill_in :username, with: 'bad-user'
+        fill_in :password, with: 'password'
+        click_button 'login'
+
+        expect(page).to have_content('Sign up')
       end
 
       it 'redirects to login_url' do
