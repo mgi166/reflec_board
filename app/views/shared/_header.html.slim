@@ -16,4 +16,7 @@
         | Contact
   ul.nav.navbar-nav.navbar-right
     li
-      = link_to 'login', login_url
+      - if logged_in?
+        = link_to 'logout', logout_url
+      - else
+        = link_to 'login', login_url
