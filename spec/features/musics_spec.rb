@@ -21,8 +21,19 @@ RSpec.feature "Musics", type: :feature do
         expect(page).to have_selector('div.alert-danger')
       end
 
-      it do
+      it 'redirects to login_path' do
         expect(current_path).to eq login_path
+      end
+    end
+
+    context 'user already logged in' do
+      before do
+        login user
+        visit musics_path
+      end
+
+      it 'redirects musics_path' do
+        expect(current_path).to eq musics_path
       end
     end
   end
