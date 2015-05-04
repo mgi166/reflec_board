@@ -11,7 +11,7 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(user_sessions_params)
 
     if @user_session.save
-      redirect_back_or(root_url, notice: "Login successful")
+      redirect_back_or(musics_path, notice: "Login successful")
     else
       redirect_to login_url, alert: 'Login failed.'
     end

@@ -27,8 +27,8 @@ RSpec.feature "Logins", type: :feature do
         expect(page).not_to have_content('Sign up')
       end
 
-      it 'redirects to root_path' do
-        expect(current_path).to eq root_path
+      it 'redirects to musics_path' do
+        expect(current_path).to eq musics_path
       end
     end
 
