@@ -10,11 +10,14 @@ class MusicsController < ApplicationController
   # GET /musics/1
   # GET /musics/1.json
   def show
+    unless @music
+      render status: 404
+    end
   end
 
   private
 
   def set_music
-    @music = Music.find(params[:id])
+    @music = current_user.musics.find_by(id: params[:id])
   end
 end
