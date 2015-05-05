@@ -1,7 +1,7 @@
 # TODO
 
 - [ ] loggin/loggin-rails gem
-- [ ] music model
+- [x] music model
   * user has many musics
   * music has many users
   - [x] have the following columns...
