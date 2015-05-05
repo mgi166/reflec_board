@@ -10,8 +10,8 @@ RSpec.feature "Logins", type: :feature do
       before do
         visit login_path
 
-        fill_in :username, with: 'test'
-        fill_in :password, with: 'password'
+        fill_in t('activerecord.attributes.user.username'), with: 'test'
+        fill_in t('activerecord.attributes.user.password'), with: 'password'
         click_button 'login'
       end
 
@@ -36,8 +36,8 @@ RSpec.feature "Logins", type: :feature do
       before do
         visit login_path
 
-        fill_in :username, with: 'bad-user'
-        fill_in :password, with: 'password'
+        fill_in t('activerecord.attributes.user.username'), with: 'bad-user'
+        fill_in t('activerecord.attributes.user.password'), with: 'password'
         click_button 'login'
       end
 
