@@ -10,6 +10,7 @@ class MusicsController < ApplicationController
   # GET /musics/1
   # GET /musics/1.json
   def show
+    # FIXME: render 404 page
     unless @music
       render status: 404
     end
