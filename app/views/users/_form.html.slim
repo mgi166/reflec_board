@@ -1,9 +1,9 @@
 = simple_form_for(@user) do |f|
   = f.error_notification
-  = f.input :username, label: :name
+  = f.input :username
   br
-  = f.input :email, label: :email
+  = f.input :email
   br
-  = f.input :password, label: :password
+  = f.input :password
   .actions
     = f.button :submit
