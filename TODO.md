@@ -27,3 +27,6 @@
 - [ ] save cookie to user
   * if user has expired cookie, again get cookie and save automatically
 - [ ] username or email login
+- [ ] music_image model
+  * cd conver images for musics
+
