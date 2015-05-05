@@ -7,13 +7,6 @@
     span.icon-bar
   = link_to "Reflec Board", root_url, :class => "navbar-brand"
 #navbar.collapse.navbar-collapse
-  ul.nav.navbar-nav
-    li
-      a[href="#about"]
-        | About
-    li
-      a[href="#contact"]
-        | Contact
   ul.nav.navbar-nav.navbar-right
     - if logged_in?
       li
