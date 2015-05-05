@@ -24,7 +24,7 @@ RSpec.feature "Logins", type: :feature do
       end
 
       it do
-        expect(page).not_to have_content I18n.t('views.shared.header.signup')
+        expect(page).to have_content I18n.t('views.shared.header.account_setting')
       end
 
       it 'redirects to musics_path' do
