@@ -29,4 +29,7 @@
 - [ ] username or email login
 - [ ] music_image model
   * cd conver images for musics
-
+- [ ] routing
+  * use root_path after login
+- [ ] user_image model
+  * user icon
