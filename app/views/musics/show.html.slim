@@ -1,12 +1,10 @@
 p#notice = notice
 
 p
-  strong Index:
-  = @music.index
+  strong Name:
+  = @music.name
 p
-  strong Show:
-  = @music.show
+  strong Score:
+  = @music.score
 
-= link_to 'Edit', edit_music_path(@music)
-'|
 = link_to 'Back', musics_path
