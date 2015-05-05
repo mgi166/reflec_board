@@ -1,0 +1,8 @@
+ja:
+  views:
+    shared:
+      header:
+        account_setting: アカウント設定
+        logout: ログアウト
+        signup: 新規登録
+        login: ログイン
