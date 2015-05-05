@@ -1,0 +1,9 @@
+en:
+  activerecord:
+    models:
+      user: user
+    attributes:
+      user:
+        username: KONAMI ID
+        email: email
+        password: password
