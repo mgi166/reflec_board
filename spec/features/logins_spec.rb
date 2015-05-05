@@ -20,11 +20,11 @@ RSpec.feature "Logins", type: :feature do
       end
 
       it do
-        expect(page).to have_content('logout')
+        expect(page).to have_content I18n.t('views.shared.header.logout')
       end
 
       it do
-        expect(page).not_to have_content('Sign up')
+        expect(page).not_to have_content I18n.t('views.shared.header.signup')
       end
 
       it 'redirects to musics_path' do
@@ -46,11 +46,11 @@ RSpec.feature "Logins", type: :feature do
       end
 
       it do
-        expect(page).to have_content('login')
+        expect(page).to have_content I18n.t('views.shared.header.login')
       end
 
       it do
-        expect(page).to have_content('Sign up')
+        expect(page).to have_content I18n.t('views.shared.header.signup')
       end
 
       it 'redirects to login_url' do
