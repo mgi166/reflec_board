@@ -1,5 +1,7 @@
 h1 Listing musics
 
+= paginate @musics
+
 table
   thead
     tr
@@ -12,3 +14,4 @@ table
         td = music.name
         td = link_to 'Show', controller: :musics, action: :show, id: music.to_param
 
+= paginate @musics
