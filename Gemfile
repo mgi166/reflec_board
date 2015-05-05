@@ -35,6 +35,7 @@ gem 'authlogic'
 gem 'slim-rails'
 gem 'rails-i18n'
 gem 'rails_config'
+gem 'kaminari'
 
 group :development do
   gem 'quiet_assets'
