@@ -1,6 +1,7 @@
 = simple_form_for(:user_sessions, url: :user_sessions) do |f|
-  = f.input :username, label: :username
+  / FIXME: It is supposed to be unnecessary `label: t('xxx')`.
+  = f.input :username, label: t('authlogic.attributes.user_session.username')
   br
-  = f.input :password, label: :password
+  = f.input :password, label: t('authlogic.attributes.user_session.password')
   .actions
     = f.button :submit, 'login'
