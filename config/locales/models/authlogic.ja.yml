@@ -1,0 +1,23 @@
+ja:
+  authlogic:
+    error_messages:
+      login_blank: は空白です。
+      login_not_found: は何も入力されていません。
+      login_invalid: にはアルファベット・数字・半角空白・ピリオド・ハイフン・アットマーク以外使えません。
+      consecutive_failed_logins_limit_exceeded: ログインの失敗回数が規定を超えました。
+      email_invalid: は正しいアドレスではありません。
+      password_blank: は空白です。
+      password_invalid: は正しくありません。
+      not_active: あなたのアカウントは有効化されていません。
+      not_confirmed: あなたのアカウントは確認されていません。
+      not_approved: あなたのアカウントは許可されていません。
+      no_authentication_details: 認証に必要な情報がありません。
+      general_credentials_error: ログイン名かパスワードが正しくありません
+    models:
+      user_session: ログイン情報
+    attributes:
+      user_session:
+        login: ログイン名
+        email: Eメール
+        password: パスワード
+        remember_me: ログイン情報を記憶
