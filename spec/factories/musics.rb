@@ -8,6 +8,12 @@ FactoryGirl.define do
     clear_level 1
     play_count 0
     miss_count 2
+
+    Settings.difficulty.each do |d|
+      trait "difficulty_#{d}".to_sym do
+        difficulty d
+      end
+    end
   end
 
 end
