@@ -5,13 +5,13 @@ h1 Listing musics
     = text_field_tag :q, nil, { class: "form-control" }
 
     .btn-group.btn-group-lg[data-toggle="buttons"]
-      - Settings.difficulty.each do |d|
+      - Settings.music.difficulty.each do |d|
         .btn.btn-default
           = check_box_tag 'difficulty[]', nil, false, id: "difficulty_#{d}", value: d
           = d
 
     .btn-group[data-toggle="buttons"]
-      - Settings.levels.zip([:success, :warning, :danger, :primary]) do |l, klass|
+      - Settings.music.levels.zip([:success, :warning, :danger, :primary]) do |l, klass|
         .[class="btn btn-#{klass}"]
           = check_box_tag 'level[]', nil, false, id: "level_#{l}", value: l
           = l
