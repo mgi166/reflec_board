@@ -4,9 +4,11 @@ class MusicsController < ApplicationController
   # GET /musics
   # GET /musics.json
   def index
-    if search_query.present?
+    if search_query_exist?
       # FIXME: Not only To be searchable by name but also such as artist name, etc..
       @musics = current_user.musics.where("name LIKE ?", "%#{search_query[:q]}%")
+    elsif difficulty_query_exist?
+      @musics = (@musics || current_user.musics).by_difficulty(params[:difficulty])
     else
       @musics = current_user.musics
     end
@@ -31,5 +33,13 @@ class MusicsController < ApplicationController
 
   def search_query
     params.permit(:q, difficulty: [])
+  end
+
+  def search_query_exist?
+    search_query.key?(:q)
+  end
+
+  def difficulty_query_exist?
+    search_query.key?(:difficulty)
   end
 end
