@@ -10,9 +10,15 @@ h1 Listing musics
           = check_box_tag 'difficulty[]', nil, false, id: "difficulty_#{d}", value: d
           = d
 
-    br
+    .btn-group[data-toggle="buttons"]
+      - Settings.levels.zip([:success, :warning, :danger, :primary]) do |l, klass|
+        .[class="btn btn-#{klass}"]
+          = check_box_tag 'level[]', nil, false, id: "level_#{l}", value: l
+          = l
 
-    = button_tag name: :search, class: "btn btn-default" do
+br
+
+= button_tag name: :search, class: "btn btn-default" do
       span[class="glyphicon glyphicon-search" aria-hidden="true"]
         = t('.search')
 

@@ -10,3 +10,8 @@ difficulty:
   - 9
   - 10
   - 10+
+levels:
+  - BASIC
+  - MEDIUM
+  - HARD
+  - SPECIAL
