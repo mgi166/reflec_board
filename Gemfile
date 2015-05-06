@@ -37,6 +37,7 @@ gem 'rails-i18n'
 gem 'rails_config'
 gem 'kaminari'
 gem 'sass'
+gem 'logging-rails', require: 'logging/rails'
 
 group :development do
   gem 'quiet_assets'
