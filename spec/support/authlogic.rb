@@ -11,8 +11,8 @@ module AuthlogicFeatureHelper
   def login(user)
     visit login_path
 
-    fill_in :username, with: user.username
-    fill_in :password, with: user.password
+    fill_in t('activerecord.attributes.user.username'), with: user.username
+    fill_in t('activerecord.attributes.user.password'), with: user.password
     click_button 'login'
   end
 end
