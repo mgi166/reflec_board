@@ -35,6 +35,10 @@ RSpec.feature "Musics", type: :feature do
       it 'redirects musics_path' do
         expect(current_path).to eq musics_path
       end
+
+      it 'have a search box' do
+        expect(page).to have_selector('input[name="q"]')
+      end
     end
   end
 end
