@@ -16,9 +16,9 @@ h1 Listing musics
           = check_box_tag 'level[]', nil, false, id: "level_#{l}", value: l
           = l
 
-br
+    br
 
-= button_tag name: :search, class: "btn btn-default" do
+    = button_tag name: :search, class: "btn btn-default" do
       span[class="glyphicon glyphicon-search" aria-hidden="true"]
         = t('.search')
 
