@@ -24,16 +24,23 @@ h1 Listing musics
 
 = paginate @musics
 
-table
-  thead
-    tr
-      th Index
-      th Show
-
-  tbody
-    - @musics.each do |music|
-      tr
-        td = music.name
-        td = link_to 'Show', controller: :musics, action: :show, id: music.to_param
+.panel.panel-default
+  table.table.table-bordered.table-hover
+    thead
+      th = t('.name')
+      th = t('.difficulty')
+      th = t('.level')
+      th = t('.achivement_rate')
+      th = t('.score')
+      th = t('.detail')
+    tbody
+      - @musics.each do |music|
+        tr
+          td = music.name
+          td = music.difficulty
+          td = music.type
+          td = music.achivement_rate
+          td = music.score
+          td = link_to 'Show', controller: :musics, action: :show, id: music.to_param
 
 = paginate @musics

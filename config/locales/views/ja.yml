@@ -13,3 +13,9 @@ ja:
   musics:
     index:
       search: 検索
+      name: 曲名
+      difficulty: 難易度
+      level: レベル
+      detail: 詳細
+      achivement_rate: AR
+      score: スコア
