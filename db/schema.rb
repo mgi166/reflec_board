@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150504054410) do
+ActiveRecord::Schema.define(version: 20150506063843) do
 
   create_table "friend_users", force: :cascade do |t|
     t.integer  "friend_id",  limit: 4, null: false
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20150504054410) do
   create_table "musics", force: :cascade do |t|
     t.string   "name",            limit: 255,             null: false
     t.string   "type",            limit: 255,             null: false
+    t.string   "difficulty",      limit: 255,             null: false
     t.integer  "score",           limit: 4
     t.float    "achivement_rate", limit: 24
     t.integer  "clear_level",     limit: 4,   default: 0, null: false
