@@ -1,5 +1,12 @@
 h1 Listing musics
 
+.input-group
+  = form_tag musics_path, method: :get do
+    = text_field_tag :q, nil, { class: "form-control" }
+    = button_tag name: :search, class: "btn btn-default" do
+      span[class="glyphicon glyphicon-search" aria-hidden="true"]
+        = t('.search')
+
 = paginate @musics
 
 table
