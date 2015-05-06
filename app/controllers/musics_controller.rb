@@ -30,6 +30,6 @@ class MusicsController < ApplicationController
   end
 
   def search_query
-    params.permit(:q)
+    params.permit(:q, difficulty: [])
   end
 end
