@@ -10,11 +10,11 @@
   ul.nav.navbar-nav.navbar-right
     - if logged_in?
       li
-        = link_to t('views.shared.header.account_setting'), edit_user_path(current_user)
+        = link_to t('.account_setting'), edit_user_path(current_user)
       li
-        = link_to t('views.shared.header.logout'), logout_url
+        = link_to t('.logout'), logout_url
     - else
       li
-        = link_to t('views.shared.header.signup'), register_url
+        = link_to t('.signup'), register_url
       li
-        = link_to t('views.shared.header.login'), login_url
+        = link_to t('.login'), login_url
