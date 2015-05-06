@@ -1,13 +1,15 @@
 ja:
-  views:
-    shared:
-      header:
-        account_setting: アカウント設定
-        logout: ログアウト
-        signup: 新規登録
-        login: ログイン
-    top:
-      index:
-        subject_html: |
-          ReflecBoard は ReflecBeat 専用スコアボードです。<br>
-          より便利に、より見やすく、あなたのスコアを表示します。
+  shared:
+    header:
+      account_setting: アカウント設定
+      logout: ログアウト
+      signup: 新規登録
+      login: ログイン
+  top:
+    index:
+      subject_html: |
+        ReflecBoard は ReflecBeat 専用スコアボードです。<br>
+        より便利に、より見やすく、あなたのスコアを表示します。
+  musics:
+    index:
+      search: 検索
