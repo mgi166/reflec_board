@@ -31,6 +31,13 @@ RSpec.describe MusicsController, type: :controller do
       get :index, {}, valid_session
       expect(assigns(:musics)).to eq([music_1, music_2])
     end
+
+    context 'when seaches name' do
+      it 'assigns only musics that matches query' do
+        get :index, { q: music_1.name }, valid_session
+        expect(assigns(:musics)).to eq [music_1]
+      end
+    end
   end
 
   describe "GET #show" do
