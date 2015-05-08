@@ -1,6 +1,6 @@
 # TODO
 
-- [ ] loggin/loggin-rails gem
+- [x] loggin/loggin-rails gem
 - [x] music model
   * user has many musics
   * music has many users
