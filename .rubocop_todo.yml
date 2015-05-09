@@ -5,17 +5,12 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 1
-# Configuration parameters: AllowSafeAssignment.
 Lint/AssignmentInCondition:
   Enabled: false
 
-# Offense count: 2
 Lint/HandleExceptions:
   Enabled: false
 
-# Offense count: 1
-# Cop supports --auto-correct.
 Lint/UnusedBlockArgument:
   Enabled: false
 
@@ -33,58 +28,47 @@ Metrics/LineLength:
 Metrics/MethodLength:
   Max: 12
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedHashRocketStyle, EnforcedColonStyle, EnforcedLastArgumentHashStyle, SupportedLastArgumentHashStyles.
 Style/AlignHash:
   Enabled: false
 
-# Offense count: 3
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
 Style/AlignParameters:
   Enabled: false
 
-# Offense count: 2
-# Cop supports --auto-correct.
 Style/BlockComments:
+  Enabled: false
+
+Style/Blocks:
   Enabled: false
 
 Style/ClassAndModuleChildren:
   Enabled: false
 
-# Offense count: 31
 Style/Documentation:
   Enabled: false
 
-# Offense count: 1
 Style/DoubleNegation:
   Enabled: false
 
-# Offense count: 2
-# Configuration parameters: MinBodyLength.
 Style/GuardClause:
   Enabled: false
 
-# Offense count: 1
-# Configuration parameters: MaxLineLength.
 Style/IfUnlessModifier:
   Enabled: false
 
 Style/NumericLiterals:
   Enabled: false
 
+# Offense count: 3
+# Cop supports --auto-correct.
+# Configuration parameters: PreferredDelimiters.
+Style/PercentLiteralDelimiters:
+  Enabled: false
+
 Style/SingleSpaceBeforeFirstArg:
   Enabled: false
 
-# Offense count: 196
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
 Style/StringLiterals:
   Enabled: false
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleForMultiline, SupportedStyles.
 Style/TrailingComma:
   Enabled: false
