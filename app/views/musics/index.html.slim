@@ -32,15 +32,13 @@ br
       th = t('.level')
       th = t('.achivement_rate')
       th = t('.score')
-      th = t('.detail')
     tbody
       - @musics.each do |music|
-        tr
+        tr[data-href=music_path(music)]
           td = music.name
           td = music.difficulty
           td = music.level
           td = music.achivement_rate
           td = music.score
-          td = link_to 'Show', controller: :musics, action: :show, id: music.to_param
 
 = paginate @musics
