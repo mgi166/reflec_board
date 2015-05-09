@@ -33,6 +33,6 @@
   * use root_path after login
 - [ ] user_image model
   * user icon
-- [ ] remove music#show link on music#index
+- [x] remove music#show link on music#index
   * when click a table column, move music#show page
 - [x] level and difficulty, The reverse is intended to mean that
