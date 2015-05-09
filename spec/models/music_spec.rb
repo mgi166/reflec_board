@@ -23,7 +23,7 @@ RSpec.describe Music, type: :model do
       context 'with multipul arguments' do
         it 'selects musics that have the argument difficulty' do
           expect(Music.by_difficulty('1', '4')).to eq(
-            [ music_1, music_4 ]
+            [music_1, music_4]
           )
         end
       end
@@ -31,14 +31,14 @@ RSpec.describe Music, type: :model do
       context 'with single arguments' do
         it 'selects a music that has the argument difficulty' do
           expect(Music.by_difficulty('1')).to eq(
-            [ music_1 ]
+            [music_1]
           )
         end
 
         context 'when the argument is instance of Array' do
           it 'selects musics that have the argument difficulty' do
-            expect(Music.by_difficulty(['2', '3'])).to eq(
-              [ music_2, music_3 ]
+            expect(Music.by_difficulty(%w(2 3))).to eq(
+              [music_2, music_3]
             )
           end
         end

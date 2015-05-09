@@ -49,12 +49,12 @@ RSpec.describe MusicsController, type: :controller do
 
   describe "GET #show" do
     it "assigns the requested music that associated to user as @music" do
-      get :show, {:id => music_1.to_param}, valid_session
+      get :show, { id: music_1.to_param }, valid_session
       expect(assigns(:music)).to eq(music_1)
     end
 
     it do
-      get :show, {:id => music_3.to_param}, valid_session
+      get :show, { id: music_3.to_param }, valid_session
       expect(response).to have_http_status 404
     end
   end

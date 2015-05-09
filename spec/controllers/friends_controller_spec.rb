@@ -19,17 +19,16 @@ require 'rails_helper'
 # that an instance is receiving a specific message.
 
 RSpec.describe FriendsController, type: :controller do
-
   # This should return the minimal set of attributes required to create a valid
   # Friend. As you add validations to Friend, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
+  let(:valid_attributes) do
     skip("Add a hash of attributes valid for your model")
-  }
+  end
 
-  let(:invalid_attributes) {
+  let(:invalid_attributes) do
     skip("Add a hash of attributes invalid for your model")
-  }
+  end
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -47,7 +46,7 @@ RSpec.describe FriendsController, type: :controller do
   describe "GET #show" do
     it "assigns the requested friend as @friend" do
       friend = Friend.create! valid_attributes
-      get :show, {:id => friend.to_param}, valid_session
+      get :show, { id: friend.to_param }, valid_session
       expect(assigns(:friend)).to eq(friend)
     end
   end
@@ -62,7 +61,7 @@ RSpec.describe FriendsController, type: :controller do
   describe "GET #edit" do
     it "assigns the requested friend as @friend" do
       friend = Friend.create! valid_attributes
-      get :edit, {:id => friend.to_param}, valid_session
+      get :edit, { id: friend.to_param }, valid_session
       expect(assigns(:friend)).to eq(friend)
     end
   end
@@ -70,31 +69,31 @@ RSpec.describe FriendsController, type: :controller do
   describe "POST #create" do
     context "with valid params" do
       it "creates a new Friend" do
-        expect {
-          post :create, {:friend => valid_attributes}, valid_session
-        }.to change(Friend, :count).by(1)
+        expect do
+          post :create, { friend: valid_attributes }, valid_session
+        end.to change(Friend, :count).by(1)
       end
 
       it "assigns a newly created friend as @friend" do
-        post :create, {:friend => valid_attributes}, valid_session
+        post :create, { friend: valid_attributes }, valid_session
         expect(assigns(:friend)).to be_a(Friend)
         expect(assigns(:friend)).to be_persisted
       end
 
       it "redirects to the created friend" do
-        post :create, {:friend => valid_attributes}, valid_session
+        post :create, { friend: valid_attributes }, valid_session
         expect(response).to redirect_to(Friend.last)
       end
     end
 
     context "with invalid params" do
       it "assigns a newly created but unsaved friend as @friend" do
-        post :create, {:friend => invalid_attributes}, valid_session
+        post :create, { friend: invalid_attributes }, valid_session
         expect(assigns(:friend)).to be_a_new(Friend)
       end
 
       it "re-renders the 'new' template" do
-        post :create, {:friend => invalid_attributes}, valid_session
+        post :create, { friend: invalid_attributes }, valid_session
         expect(response).to render_template("new")
       end
     end
@@ -102,26 +101,26 @@ RSpec.describe FriendsController, type: :controller do
 
   describe "PUT #update" do
     context "with valid params" do
-      let(:new_attributes) {
+      let(:new_attributes) do
         skip("Add a hash of attributes valid for your model")
-      }
+      end
 
       it "updates the requested friend" do
         friend = Friend.create! valid_attributes
-        put :update, {:id => friend.to_param, :friend => new_attributes}, valid_session
+        put :update, { id: friend.to_param, friend: new_attributes }, valid_session
         friend.reload
         skip("Add assertions for updated state")
       end
 
       it "assigns the requested friend as @friend" do
         friend = Friend.create! valid_attributes
-        put :update, {:id => friend.to_param, :friend => valid_attributes}, valid_session
+        put :update, { id: friend.to_param, friend: valid_attributes }, valid_session
         expect(assigns(:friend)).to eq(friend)
       end
 
       it "redirects to the friend" do
         friend = Friend.create! valid_attributes
-        put :update, {:id => friend.to_param, :friend => valid_attributes}, valid_session
+        put :update, { id: friend.to_param, friend: valid_attributes }, valid_session
         expect(response).to redirect_to(friend)
       end
     end
@@ -129,13 +128,13 @@ RSpec.describe FriendsController, type: :controller do
     context "with invalid params" do
       it "assigns the friend as @friend" do
         friend = Friend.create! valid_attributes
-        put :update, {:id => friend.to_param, :friend => invalid_attributes}, valid_session
+        put :update, { id: friend.to_param, friend: invalid_attributes }, valid_session
         expect(assigns(:friend)).to eq(friend)
       end
 
       it "re-renders the 'edit' template" do
         friend = Friend.create! valid_attributes
-        put :update, {:id => friend.to_param, :friend => invalid_attributes}, valid_session
+        put :update, { id: friend.to_param, friend: invalid_attributes }, valid_session
         expect(response).to render_template("edit")
       end
     end
@@ -144,16 +143,15 @@ RSpec.describe FriendsController, type: :controller do
   describe "DELETE #destroy" do
     it "destroys the requested friend" do
       friend = Friend.create! valid_attributes
-      expect {
-        delete :destroy, {:id => friend.to_param}, valid_session
-      }.to change(Friend, :count).by(-1)
+      expect do
+        delete :destroy, { id: friend.to_param }, valid_session
+      end.to change(Friend, :count).by(-1)
     end
 
     it "redirects to the friends list" do
       friend = Friend.create! valid_attributes
-      delete :destroy, {:id => friend.to_param}, valid_session
+      delete :destroy, { id: friend.to_param }, valid_session
       expect(response).to redirect_to(friends_url)
     end
   end
-
 end
