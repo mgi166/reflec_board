@@ -5,4 +5,7 @@ class User < ActiveRecord::Base
 
   has_many :music_users
   has_many :musics, through: :music_users
+
+  has_many :friend_users
+  has_many :friends, through: :friend_users
 end
