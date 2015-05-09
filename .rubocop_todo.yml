@@ -14,19 +14,14 @@ Lint/HandleExceptions:
 Lint/UnusedBlockArgument:
   Enabled: false
 
-# Offense count: 1
 Metrics/AbcSize:
-  Max: 19
+  Enabled: false
 
-# Offense count: 72
-# Configuration parameters: AllowURI, URISchemes.
 Metrics/LineLength:
-  Max: 116
+  Enabled: false
 
-# Offense count: 1
-# Configuration parameters: CountComments.
 Metrics/MethodLength:
-  Max: 12
+  Enabled: false
 
 Style/AlignHash:
   Enabled: false
