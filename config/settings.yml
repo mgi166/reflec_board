@@ -1,5 +1,5 @@
 music:
-  difficulty:
+  levels:
     - 1
     - 2
     - 3
@@ -11,7 +11,7 @@ music:
     - 9
     - 10
     - 10+
-  levels:
+  difficulty:
     - BASIC
     - MEDIUM
     - HARD

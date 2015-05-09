@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.feature "Musics", type: :feature do
   let!(:user)    { create :user }
-  let!(:music_1) { create(:hard_music) }
-  let!(:music_2) { create(:hard_music) }
-  let!(:music_3) { create(:hard_music) }
+  let!(:music_1) { create(:music) }
+  let!(:music_2) { create(:music) }
+  let!(:music_3) { create(:music) }
   let!(:music_user) do
     create(:music_user, user: user, music: music_1)
     create(:music_user, user: user, music: music_2)

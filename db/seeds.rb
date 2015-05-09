@@ -10,8 +10,8 @@ ActiveRecord::Base.transaction do
   user = FactoryGirl.create :user
 
   20.times do
-    hard_music = FactoryGirl.create :hard_music
-    FactoryGirl.create(:music_user, music: hard_music, user: user)
+    m = FactoryGirl.create :music
+    FactoryGirl.create(:music_user, music: m, user: user)
   end
 
   10.times do

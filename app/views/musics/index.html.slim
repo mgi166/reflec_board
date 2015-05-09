@@ -5,16 +5,16 @@ h1 Listing musics
     = text_field_tag :q, nil, { class: "form-control" }
 
     .btn-group.btn-group-lg[data-toggle="buttons"]
-      - Settings.music.difficulty.each do |d|
+      - Settings.music.levels.each do |l|
         .btn.btn-default
-          = check_box_tag 'difficulty[]', nil, false, id: "difficulty_#{d}", value: d
-          = d
-
-    .btn-group[data-toggle="buttons"]
-      - Settings.music.levels.zip([:success, :warning, :danger, :primary]) do |l, klass|
-        .[class="btn btn-#{klass}"]
           = check_box_tag 'level[]', nil, false, id: "level_#{l}", value: l
           = l
+
+    .btn-group[data-toggle="buttons"]
+      - Settings.music.difficulty.zip([:success, :warning, :danger, :primary]) do |d, klass|
+        .[class="btn btn-#{klass}"]
+          = check_box_tag 'difficulty[]', nil, false, id: "difficulty_#{d}", value: d
+          = d
 
     br
 
@@ -38,7 +38,7 @@ br
         tr
           td = music.name
           td = music.difficulty
-          td = music.type
+          td = music.level
           td = music.achivement_rate
           td = music.score
           td = link_to 'Show', controller: :musics, action: :show, id: music.to_param
