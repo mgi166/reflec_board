@@ -1,5 +1,9 @@
 AllCops:
+  Exclude:
+    - db/**/*
+    - vendor/**/*
   RunRailsCops: true
+  DisplayCopNames: true
 
 Lint/AssignmentInCondition:
   Enabled: false
