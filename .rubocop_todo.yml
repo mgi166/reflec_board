@@ -53,12 +53,6 @@ Style/IfUnlessModifier:
 Style/NumericLiterals:
   Enabled: false
 
-# Offense count: 3
-# Cop supports --auto-correct.
-# Configuration parameters: PreferredDelimiters.
-Style/PercentLiteralDelimiters:
-  Enabled: false
-
 Style/SingleSpaceBeforeFirstArg:
   Enabled: false
 
