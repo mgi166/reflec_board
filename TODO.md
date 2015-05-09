@@ -35,4 +35,4 @@
   * user icon
 - [ ] remove music#show link on music#index
   * when click a table column, move music#show page
-- [ ] level and difficulty, The reverse is intended to mean that
+- [x] level and difficulty, The reverse is intended to mean that
