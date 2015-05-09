@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: 'top#index'
 
+  resources :friends, only: [:index, :show]
   resources :users, except: [:index]
   resources :user_sessions, only: [:create]
   resources :musics, only: [:index, :show]
