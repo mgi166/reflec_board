@@ -78,7 +78,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Set the logging destination(s)
-  config.log_to = %w[file]
+  config.log_to = %w(file)
 
   # Show the logging configuration on STDOUT
   config.show_log_configuration = false
