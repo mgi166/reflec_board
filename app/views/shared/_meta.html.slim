@@ -1,0 +1,11 @@
+/ See https://github.com/kpumuk/meta-tags#allowed-options-for-display_meta_tags-and-set_meta_tags-methods
+
+- set_meta_tags site: t('site_title'), reverse: true
+- set_meta_tags description: t('meta.description')
+- set_meta_tags keyword: t('meta.keywords')
+- set_meta_tags og: t('meta.og')
+- set_meta_tags twitter: t('meta.twitter')
+
+meta charset="UTF-8"
+
+= display_meta_tags
