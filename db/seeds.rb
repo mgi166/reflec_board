@@ -13,4 +13,9 @@ ActiveRecord::Base.transaction do
     hard_music = FactoryGirl.create :hard_music
     FactoryGirl.create(:music_user, music: hard_music, user: user)
   end
+
+  10.times do
+    f = FactoryGirl.create(:friend)
+    FactoryGirl.create(:friend_user, friend: f, user: user)
+  end
 end
