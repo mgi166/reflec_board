@@ -39,6 +39,7 @@ gem 'sass'
 gem 'logging-rails', require: 'logging/rails'
 gem 'jquery-turbolinks'
 gem 'meta-tags'
+gem 'valanga'
 
 group :development do
   gem 'quiet_assets'
