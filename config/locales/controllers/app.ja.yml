@@ -2,3 +2,7 @@ ja:
   users:
     create:
       success: 新規ユーザーを作成しました
+    update:
+      success: ユーザー設定を更新しました
+    destroy:
+      success: ユーザーを削除しました

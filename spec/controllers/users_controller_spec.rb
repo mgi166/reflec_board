@@ -75,6 +75,7 @@ RSpec.describe UsersController, type: :controller do
       it "redirects to the created user" do
         post :create, { user: valid_attributes }, valid_session
         expect(response).to redirect_to(User.last)
+        expect(flash[:notice]).to eq '新規ユーザーを作成しました'
       end
     end
 
@@ -122,6 +123,7 @@ RSpec.describe UsersController, type: :controller do
         it "redirects to the user" do
           put :update, { id: user.to_param, user: valid_attributes }, valid_session
           expect(response).to redirect_to(user)
+          expect(flash[:notice]).to eq 'ユーザー設定を更新しました'
         end
       end
 
@@ -161,6 +163,7 @@ RSpec.describe UsersController, type: :controller do
       it "redirects to the users list" do
         delete :destroy, { id: user.to_param }, valid_session
         expect(response).to redirect_to(users_url)
+        expect(flash[:notice]).to eq 'ユーザーを削除しました'
       end
     end
   end
