@@ -9,7 +9,7 @@
     * name
     * clear
     * fullcombo
-- [ ] score model
+- [x] score model
   * music has many scores
   * score belongs to music
   * have the following columns...
