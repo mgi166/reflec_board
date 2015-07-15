@@ -40,6 +40,7 @@ gem 'logging-rails', require: 'logging/rails'
 gem 'jquery-turbolinks'
 gem 'meta-tags'
 gem 'valanga'
+gem 'delayed_job_active_record'
 
 group :development do
   gem 'quiet_assets'
