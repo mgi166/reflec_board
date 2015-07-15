@@ -21,21 +21,26 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    if @user.save
-      redirect_to @user, notice: t('.success')
-    else
-      render :new
-    end
+    @user.save!
+    redirect_to @user, notice: t('.success')
+  rescue ActiveRecord::RecordNotUnique
+    @user.errors.add(:name, t('.not_unique'))
+    render :new
+  rescue ActiveRecord::RecordInvalid
+    render :new
   end
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
-    if @user.update(user_params)
-      redirect_to @user, notice: t('.success')
-    else
-      render :edit
-    end
+    @user.update!(user_params)
+
+    redirect_to @user, notice: t('.success')
+  rescue ActiveRecord::RecordNotUnique
+    @user.errors.add(:name, t('.not_unique'))
+    render :edit
+  rescue ActiveRecord::RecordInvalid
+    render :edit
   end
 
   # DELETE /users/1

@@ -77,6 +77,23 @@ RSpec.describe UsersController, type: :controller do
         expect(response).to redirect_to(User.last)
         expect(flash[:notice]).to eq '新規ユーザーを作成しました'
       end
+
+      context 'unique constraint violation' do
+        before do
+          allow_any_instance_of(User).to receive(:save!).and_raise(ActiveRecord::RecordNotUnique, 'test')
+        end
+
+        it do
+          post :create, { user: valid_attributes }, valid_session
+          expect(response).to render_template :new
+        end
+
+        it do
+          expect do
+            post :create, { user: valid_attributes }, valid_session
+          end.not_to change(User, :count)
+        end
+      end
     end
 
     context "with invalid params" do

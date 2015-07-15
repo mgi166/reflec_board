@@ -2,7 +2,9 @@ ja:
   users:
     create:
       success: 新規ユーザーを作成しました
+      not_unique: ユーザーは既に存在しています
     update:
       success: ユーザー設定を更新しました
+      not_unique: ユーザーは既に存在しています
     destroy:
       success: ユーザーを削除しました
