@@ -41,6 +41,7 @@ gem 'jquery-turbolinks'
 gem 'meta-tags'
 gem 'valanga'
 gem 'delayed_job_active_record'
+gem 'daemons'
 
 group :development do
   gem 'quiet_assets'
