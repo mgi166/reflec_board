@@ -59,4 +59,6 @@ group :development, :test do
   gem 'pry-stack_explorer'
   gem 'factory_girl_rails'
   gem 'capybara'
+  gem 'webmock'
+  gem 'vcr'
 end
