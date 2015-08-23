@@ -45,10 +45,13 @@ ActiveRecord::Schema.define(version: 20150716144115) do
   end
 
   create_table "music_score_crawlings", force: :cascade do |t|
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-    t.integer  "status",      limit: 4
-    t.integer  "music_id_id", limit: 4, null: false
+    t.datetime "started_at"
+    t.datetime "finished_at"
+    t.integer  "status",      limit: 4,     default: 0, null: false
+    t.text     "feedback",    limit: 65535
+    t.integer  "user_id",     limit: 4,                 null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
   end
 
   create_table "music_users", force: :cascade do |t|
