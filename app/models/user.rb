@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
 
   has_many :friend_users
   has_many :friends, through: :friend_users
+
+  has_many :music_score_crawlings
 end
